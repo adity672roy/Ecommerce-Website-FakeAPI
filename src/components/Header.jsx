@@ -11,7 +11,7 @@ const Header = ({ onLogout, token }) => {
 
   return (
     <header className="w-full shadow-md sticky top-0 z-50 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-3 py-3">
+      <div className="w-full flex items-center justify-between px-3 py-3">
         <Link
           to="/"
           className="text-2xl sm:text-3xl font-bold text-pink-600 tracking-wide"
