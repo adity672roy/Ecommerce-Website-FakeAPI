@@ -22,13 +22,8 @@ const Cart = () => {
       {cart.length === 0 ? (
         <p className="text-xl text-center mt-10">Your cart is empty 🛒</p>
       ) : (
-        <div className="relative flex flex-col lg:flex-row justify-between gap-8">
-          <button
-            onClick={clearCart}
-            className="absolute -top-14 right-4  bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded font-semibold text-sm transition"
-          >
-            Clear Cart
-          </button>
+        <div className=" flex flex-col lg:flex-row justify-between gap-8">
+         
           {/* Left side */}
           <div className="flex-1 space-y-4">
             {cart.map((item) => (
@@ -67,6 +62,12 @@ const Cart = () => {
                 </div>
               </div>
             ))}
+             <button
+            onClick={clearCart}
+            className="  bg-pink-500 hover:bg-pink-600 text-white py-2 px-4 rounded font-semibold text-sm transition"
+          >
+            Clear Cart
+          </button>
           </div>
 
           {/* Right side */}
