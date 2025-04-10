@@ -1,8 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
@@ -14,28 +10,26 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
-  
+  const navigate = useNavigate();
+
   useEffect(() => {
     setToken(localStorage.getItem("token"));
   }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    navigate("/login");
     setToken(null);
   };
 
   return (
-    <Router>
-      <Header
-        onLogout={handleLogout}
-         
-        token={token}
-      />
+    <>
+      <Header onLogout={handleLogout} token={token} />
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login setToken={setToken} />} />
-        
+
         <Route
           path="/products/:id"
           element={
@@ -46,13 +40,15 @@ function App() {
         />
         <Route
           path="/cart"
-          element={ <ProtectedRoute token={token}>
-          <Cart />
-        </ProtectedRoute>}
+          element={
+            <ProtectedRoute token={token}>
+              <Cart />
+            </ProtectedRoute>
+          }
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 
