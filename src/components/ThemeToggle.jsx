@@ -13,7 +13,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="text-2xl text-gray-800 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 transition"
+      className="sm:text-2xl text-lg  text-gray-800 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 transition"
     >
       {darkMode ? <MdLightMode /> : <MdDarkMode />}
     </button>

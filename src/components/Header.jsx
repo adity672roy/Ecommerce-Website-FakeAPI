@@ -15,21 +15,21 @@ const Header = ({ onLogout, token }) => {
       <div className="w-full flex items-center justify-between px-3 py-3">
         <Link
           to="/"
-          className="text-2xl sm:text-3xl font-bold text-pink-600 tracking-wide"
+          className="text-xl sm:text-2xl font-bold text-pink-600 tracking-wide"
         >
           FAKE
           <span className="text-gray-800 dark:text-white">STORE</span>
         </Link>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-4">
           <Link to="/" className="relative">
-            <GoHomeFill className="text-2xl text-gray-800 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 transition" />
+            <GoHomeFill className="sm:text-2xl text-lg  text-gray-800 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 transition" />
           </Link>
           
           <ThemeToggle />
 
           <Link to="/cart" className="relative">
-            <FaCartShopping className="text-2xl text-gray-800 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 transition" />
+            <FaCartShopping className="sm:text-2xl text-lg  text-gray-800 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 transition" />
             {count > 0 && (
               <span className="absolute -top-2 -right-3 bg-pink-600 text-white text-xs font-semibold px-1.5 py-0.5 rounded-full">
                 {count}
@@ -49,7 +49,7 @@ const Header = ({ onLogout, token }) => {
               onClick={onLogout}
               className="flex items-center gap-1 text-sm text-gray-800 dark:text-gray-300 hover:text-pink-600 transition"
             >
-              <MdAccountCircle className="text-2xl" />
+              <MdAccountCircle className="sm:text-2xl text-lg " />
               Logout
             </button>
           )}
