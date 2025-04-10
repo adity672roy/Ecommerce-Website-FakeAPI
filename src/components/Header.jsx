@@ -4,6 +4,7 @@ import { CartContext } from "../context/CartContext";
 import { FaCartShopping } from "react-icons/fa6";
 import { MdAccountCircle } from "react-icons/md";
 import ThemeToggle from "./ThemeToggle";
+import { GoHomeFill } from "react-icons/go";
 
 const Header = ({ onLogout, token }) => {
   const { cart } = useContext(CartContext);
@@ -21,6 +22,10 @@ const Header = ({ onLogout, token }) => {
         </Link>
 
         <div className="flex items-center gap-5">
+          <Link to="/" className="relative">
+            <GoHomeFill className="text-2xl text-gray-800 dark:text-gray-300 hover:text-pink-600 dark:hover:text-pink-400 transition" />
+          </Link>
+          
           <ThemeToggle />
 
           <Link to="/cart" className="relative">
