@@ -59,7 +59,7 @@ const Home = () => {
       {!open && (
         <button
           onClick={() => setOpen(true)}
-          className="md:hidden absolute top-2 right-0 flex items-center gap-2 px-4 py-1 m-2 bg-pink-100 text-pink-600 font-semibold rounded-full shadow"
+          className="md:hidden absolute top-2 right-0 flex items-center gap-2 px-4 py-1 m-2 bg-pink-100 text-pink-600 font-semibold shadow"
         >
           <FiFilter /> Filter
         </button>
@@ -90,14 +90,14 @@ const Home = () => {
         <h1 className="md:text-3xl text-2xl font-bold mb-4 text-pink-600 pl-2">
           All Products
         </h1>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 sm:gap-2 ">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4  ">
           {filtered.map((product) => (
             <Link
               key={product.id}
               to={`/products/${product.id}`}
-              className="group bg-white dark:bg-gray-800 border dark:border-zinc-600 border-zinc-200 sm:rounded-md p-4 flex flex-col transition-shadow hover:shadow-lg"
+              className="group bg-white dark:bg-gray-800 border dark:border-zinc-600 border-zinc-200   p-4 flex flex-col transition-shadow hover:shadow-lg"
             >
-              <div className="w-full h-44 flex items-center justify-center mb-3">
+              <div className="w-full h-40 flex items-center justify-center mb-3">
                 <img
                   src={product.image}
                   alt={product.title}
